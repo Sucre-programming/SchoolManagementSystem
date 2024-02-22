@@ -5,7 +5,7 @@
 
         <div class="flex items-center justify-between mb-6">
             <div>
-                <h2 class="text-gray-700 uppercase font-bold">Attendance Report</h2>
+                <h2 class="text-gray-700 uppercase font-bold pageTitle">Attendance Report</h2>
             </div>
             <div class="flex flex-wrap items-center">
                 <a href="{{ route('home') }}" class="bg-gray-700 text-white text-sm uppercase py-2 px-4 flex items-center rounded">

@@ -37798,13 +37798,13 @@ video {
 
 .navbarWrapper{
     margin-top: calc(3rem + 12px);
-    background-color: black;
     border-radius: var(--barelyRounded);
     overflow: hidden;
 }
 
 .linkWrapper{
-    background-color: var(--accent-tint);
+    background-color: #fff;
+    color: var(--accent);
 
     display: grid;
     grid-template-columns: 1fr;
@@ -37820,7 +37820,8 @@ video {
     right: 5px;
     top: 5px;
     bottom: 5px;
-    background-color: var(--accent);
+    background-color: #fff;
+    color: var(--accent);
     border-radius: var(--barelyRounded);
 
     box-sizing: border-box;
@@ -37847,9 +37848,37 @@ video {
     font-size: 1rem;
     color: #fff;
 
-    transition: color 0.5s;
+    transition: color 500ms, transform 500ms;
 }
 
 .sidebarText:hover{
     color: var(--accent);
+    transform: translateX(0.5rem);
+}
+
+.pageTitle{
+    color: #fff;
+}
+
+.dashboardTile{
+    transition: background-color 1s, transform 1s;
+}
+
+.dashboardTile::after{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background-color: #FE710733;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.dashboardTile:hover{
+    /* background-color: #FE710766; */
+    transform: scale(1.03) ;
+}
+
+.dashboardTile:hover::after{
+    opacity: 1;
 }

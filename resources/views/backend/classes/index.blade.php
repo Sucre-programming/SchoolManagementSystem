@@ -4,7 +4,7 @@
     <div class="roles-permissions">
         <div class="flex items-center justify-between mb-6">
             <div>
-                <h2 class="text-gray-700 uppercase font-bold">Classes</h2>
+                <h2 class=" uppercase font-bold pageTitle">Classes</h2>
             </div>
             <div class="flex flex-wrap items-center">
                 <a href="{{ route('classes.create') }}" class="bg-green-500 text-white text-sm uppercase py-2 px-4 flex items-center rounded">
@@ -12,7 +12,7 @@
                     <span class="ml-2 text-xs font-semibold">Add New Class</span>
                 </a>
             </div>
-        </div><!-- Log on to codeastro.com for more projects -->
+        </div>
         <div class="mt-8 bg-white rounded border-b-4 border-gray-300">
             <div class="flex flex-wrap items-center uppercase text-sm font-semibold bg-gray-600 text-white rounded-tl rounded-tr">
                 <div class="w-1/12 px-4 py-3">#</div>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
             @endforeach
-        </div><!-- Log on to codeastro.com for more projects -->
+        </div>
         <div class="mt-8">
             {{ $classes->links() }}
         </div>

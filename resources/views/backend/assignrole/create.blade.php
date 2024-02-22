@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="roles">
-    <!-- Log on to codeastro.com for more projects -->
+    
         <div class="flex items-center justify-between mb-6">
             <div>
                 <h2 class="text-gray-700 uppercase font-bold">Create User &amp; Assign Role</h2>
