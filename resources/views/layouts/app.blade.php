@@ -9,28 +9,29 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
     
 </head>
 <!-- Log on to codeastro.com for more projects -->
 <body class="bg-gray-100 font-sans antialiased customBody">
 
-    <div id="app">
+    <div class="pageBodyNavbarWrapper">
 
         @include('layouts.navbar')
-        
-        <div class="main flex flex-wrap justify-end">
+
+    </div>
+
+    <div class="pageBodySidebarWrapper">
             
-            @include('layouts.sidebar')
+        @include('layouts.sidebar')
 
-            <div class="content w-full sm:w-5/6">
-                <div class="mx-auto p-4 sm:p-6 pageBodyWrapper">
+    </div>
 
-                    @yield('content')
-                    
-                </div>
-            </div>
+    <div class="pageBodyWrapper backdrop">
 
-        </div>
+        @yield('content')
 
     </div>
 

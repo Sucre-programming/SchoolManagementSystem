@@ -10,22 +10,26 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+    
     <script defer type="text/javascript" src="{{ asset('js/customBehavioursJS.js') }}"></script>
     
 </head>
 
-<body class="bg-gray-100 font-sans antialiased customBody" >
+<body class="bg-gray-100 font-sans antialiased customBody backdrop" >
 
-    <div id="app-2" class="bodyWrapper">
+    <!-- <div class="pageBodyNavbarWrapper">
 
-        @include('layouts.navbar')
-        
-        <div class="contentWrapper flex flex-wrap justify-end">
+    @include('layouts.navbar')
+
+    </div> -->
+
+    <div class="loginFormWrapper">
             
-            @yield('content')
-                    
-        </div>
-        
+        @yield('content')
+                
     </div>
     
 </body>

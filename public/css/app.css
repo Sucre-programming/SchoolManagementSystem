@@ -37610,7 +37610,7 @@ video {
 
 :root {
     /*pixel values*/
-    --barelyRounded: 10px;
+    --barelyRounded: 8px;
     --rounded: 20px;
 
     --mobile_default_fontsize: 0.9rem;
@@ -37643,31 +37643,67 @@ video {
     --heavy: 0 0 5px 2px #00000088;
 }
 
-/* LOGIN BLADE */
 
-.customBody{
+.backdrop::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.5;
     background-image: url(images/backgroundPattern.png);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
     background-size: 400px 400px;
     background-repeat: repeat;
-    background-color: var(--theme);
     background-blend-mode: screen;
+    background-color: #000000bb;
 }
 
-.bodyWrapper{
-    height: 100dvh;
-    width: 100%;
+.backdrop{
+    position: relative;
 }
 
-.main{
+
+/*  APP.BLADE STYLE */
+
+.customBody{
+    position: relative;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    background-color: var(--theme);
+    overflow-y: hidden;
+}
+
+.pageBodyNavbarWrapper{
+    grid-column: 1/3;
+    grid-row: 1;
+}
+
+.pageBodySidebarWrapper{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.pageBodyWrapper{
+    grid-column: 2;
+    grid-row: 2;
+    border-top-left-radius: var(--rounded);
+    overflow: hidden;
+
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* LOGIN BLADE */
+.loginFormWrapper{
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+
+.formWrapper{
     height: 100%;
-    width: 100%;
-}
-
-.contentWrapper{
-    height: calc(100vh - 4rem);
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -37675,25 +37711,31 @@ video {
 }
 
 .loginForm{
+    width: 30%;
     background-color: #00000099;
     -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px 2px #ffffff99;
+    box-shadow: 0 0 30px 2px #ffffff23;
 
     box-sizing: border-box;
-    padding: 3rem 5rem;
+    padding: 3rem 6%;
     border-radius: var(--barelyRounded);
 
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr;
     row-gap: 10px;
-    justify-content: center;
 }
 
 .logo{
     justify-self: center;
     height: 100px;
     width: 100px;
+}
+
+.welcomeTxt{
+    justify-self: center;
+    color: #fff;
+    padding-bottom: 20px;
 }
 
 .inputWrapper{
@@ -37785,7 +37827,6 @@ video {
 .customNavBar{
     position: relative;
     background-color: var(--theme);
-    box-shadow: var(--heavy);
 
     display: grid;
     grid-template-columns: 1fr;
@@ -37817,9 +37858,9 @@ video {
 
 .userDropdown{
     position: absolute;
-    right: 5px;
-    top: 5px;
-    bottom: 5px;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
     background-color: #fff;
     color: var(--accent);
     border-radius: var(--barelyRounded);
@@ -37835,25 +37876,78 @@ video {
 
 /* SIDEBAR BLADE */
 
-.customSideBar{
-    background-color: #00000099;
+.customSideBarWrapper{
+    height: 100vh;
+    width: 15rem;
+    overflow-x: hidden;
 }
 
-.pageBodyWrapper{
-    height: calc(100vh - 4rem);
+.profileWrapper{
+    width: 90%;
+    color: #fff;
+    box-sizing: border-box;
+    margin: 0 auto;
+    justify-self: center;
+    border-bottom: solid 1px #ffffff66;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    justify-items: center;
+}
+
+.profileImage::before{
+    content: "";
+    font-size: 2rem;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+.profileImage{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #000;
+}
+
+.username{
+    margin-bottom: 10px;
+}
+
+.customSideBar{
+    display: flex;
+    flex-flow: row wrap;
+    row-gap: 15px;
+
+    padding-bottom: 20px;
 }
 
 .sidebarText{
-    margin: 2rem 0;
+    height: min-content;
+    width: 100%;
     font-size: 1rem;
     color: #fff;
+    white-space: nowrap;
+    padding: 3% 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* background-color: #ffffff33; */
+    border-top-left-radius: var(--barelyRounded);
+    border-bottom-left-radius: var(--barelyRounded);
 
-    transition: color 500ms, transform 500ms;
+    transition: background-color 500ms, color 500ms, transform 500ms, margin 500ms;
 }
 
 .sidebarText:hover{
     color: var(--accent);
+    background-color: #1E3420;
     transform: translateX(0.5rem);
+    margin-right: 0;
 }
 
 .pageTitle{

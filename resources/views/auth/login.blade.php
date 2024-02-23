@@ -8,7 +8,7 @@
 
         <img alt="logo" class="logo" src="{{ asset('css/images/logo.png') }}">
 
-        <span class="text-white pb-6">
+        <span class="welcomeTxt">
 
             Welcome to the project EDU system.
             <br>

@@ -6,6 +6,9 @@
 
         <title>Laravel</title>
 
+        <!-- <link rel="shortcut icon" href="{{ asset('favicon.png') }}"> -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
