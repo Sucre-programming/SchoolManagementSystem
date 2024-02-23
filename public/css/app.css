@@ -37866,7 +37866,6 @@ video {
 
 .dashboardTile::after{
     content: "";
-    position: absolute;
     z-index: 1;
     inset: 0;
     background-color: #FE710733;
@@ -37875,10 +37874,11 @@ video {
 }
 
 .dashboardTile:hover{
-    /* background-color: #FE710766; */
-    transform: scale(1.03) ;
+    background-color: #FE7107; 
+    transform: scale(1.04) ;
 }
 
 .dashboardTile:hover::after{
     opacity: 1;
 }
+
