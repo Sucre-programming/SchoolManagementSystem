@@ -1,13 +1,13 @@
 <div class="sidebar overflow-y-auto customSideBarWrapper">
 
-    <div class="customSideBar">
+    <a href="{{ route('profile') }}" class="profileWrapper">
 
-        <a href="{{ route('profile') }}" class="profileWrapper">
+    <img class="profileImage" src="{{ asset('images/profile/' . auth()->user()->profile_picture) }}" alt="Avatar">
+    <p class="font-bold leading-none username">{{ auth()->user()->name }}</p>
 
-            <img class="profileImage" src="{{ asset('images/profile/' . auth()->user()->profile_picture) }}" alt="Avatar">
-            <p class="font-bold leading-none username">{{ auth()->user()->name }}</p>
+    </a>
 
-        </a>
+    <div class="customSideBarLinks">
 
         <a href="{{ route('home') }}" class="flex items-center sidebarText">
             <!-- <svg class="h-4 w-4 fill-current feather feather-grid" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg> -->

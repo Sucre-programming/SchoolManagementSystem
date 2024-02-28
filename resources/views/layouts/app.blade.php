@@ -12,6 +12,8 @@
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+
+    <script defer type="text/javascript" src="{{ asset('js/customBehavioursJS.js') }}"></script>
     
 </head>
 <!-- Log on to codeastro.com for more projects -->

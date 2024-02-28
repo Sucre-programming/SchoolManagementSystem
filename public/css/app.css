@@ -37643,6 +37643,11 @@ video {
     --heavy: 0 0 5px 2px #00000088;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 .backdrop::before{
     content: "";
@@ -37668,7 +37673,8 @@ video {
 
 .customBody{
     position: relative;
-    min-height: 100dvh;
+    height: 100dvh;
+    min-height: min-content;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
@@ -37687,13 +37693,13 @@ video {
 }
 
 .pageBodyWrapper{
+    height: 100vh;
     grid-column: 2;
     grid-row: 2;
     border-top-left-radius: var(--rounded);
-    overflow: hidden;
+    overflow-y: scroll;
 
-    box-sizing: border-box;
-    padding: 20px;
+    padding: 40px 40px 0 40px;
 }
 
 /* LOGIN BLADE */
@@ -37716,7 +37722,6 @@ video {
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 0 30px 2px #ffffff23;
 
-    box-sizing: border-box;
     padding: 3rem 6%;
     border-radius: var(--barelyRounded);
 
@@ -37746,31 +37751,28 @@ video {
 }
 
 .hover{
-    transform: translateY(-100%) !important;
-    height: auto !important;
+    transform: translateY(-40%) translateX(-50%) !important;
     color: var(--accent) !important;
 }
 
 .inputLabel{
     position: absolute;
     color: #33333366;
-    height: 0;
     background-color: #fff;
     overflow: visible;
-    right: 30%;
-    left: 30%;
-    top: 20%;
-    text-align: center;
+    padding: 0 20px;
     border-radius: var(--barelyRounded);
+    left: 50%;
+    transform: translateY(80%) translateX(-50%);
+    text-align: center;
 
-    transition: transform 500ms, height 500ms, color 500ms;
+    transition: transform 500ms, color 500ms;
 }
 
 .userInput{
     z-index: 0;
     background-color: #fff;
     border: none;
-    box-sizing: border-box;
     padding: 20px 10px 10px 10px;
     border-radius: 4px;
 
@@ -37865,7 +37867,6 @@ video {
     color: var(--accent);
     border-radius: var(--barelyRounded);
 
-    box-sizing: border-box;
     padding: 0 20px;
 
     display: grid;
@@ -37877,23 +37878,33 @@ video {
 /* SIDEBAR BLADE */
 
 .customSideBarWrapper{
-    height: 100vh;
+    height: calc(100% - 4rem);
     width: 15rem;
-    overflow-x: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
 }
 
 .profileWrapper{
+    grid-row: 1;
     width: 90%;
     color: #fff;
-    box-sizing: border-box;
     margin: 0 auto;
+    padding-top: 10px;
     justify-self: center;
-    border-bottom: solid 1px #ffffff66;
+    border-radius: var(--rounded);
 
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-flow: row;
     justify-items: center;
+
+    transition: background-color 1s;
+}
+
+.profileWrapper:hover{
+    background-color: #00000033;
 }
 
 .profileImage::before{
@@ -37920,26 +37931,40 @@ video {
     margin-bottom: 10px;
 }
 
-.customSideBar{
-    display: flex;
-    flex-flow: row wrap;
-    row-gap: 15px;
+.customSideBarLinks{
+    grid-row: 2;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px;
 
-    padding-bottom: 20px;
+    /* WebKit-based browsers (Chrome, Safari) */
+    scrollbar-width: thin; /* For Firefox compatibility */
+    scrollbar-color: #888 #f0f0f0; /* thumb color, track color */
+    scrollbar-track-color: var(--theme);
+
+}
+
+/* For WebKit-based browsers (Chrome, Safari) */
+.customSideBarLinks::-webkit-scrollbar {
+    width: 12px;
+}
+
+.customSideBarLinks::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+.customSideBarLinks::-webkit-scrollbar-track {
+    background-color: var(--theme);
 }
 
 .sidebarText{
-    height: min-content;
-    width: 100%;
     font-size: 1rem;
     color: #fff;
     white-space: nowrap;
-    padding: 3% 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 5% 20px;
+    margin: 10px 0;
     /* background-color: #ffffff33; */
-    border-top-left-radius: var(--barelyRounded);
-    border-bottom-left-radius: var(--barelyRounded);
+    border-radius: var(--rounded);
 
     transition: background-color 500ms, color 500ms, transform 500ms, margin 500ms;
 }
@@ -37947,8 +37972,6 @@ video {
 .sidebarText:hover{
     color: var(--accent);
     background-color: #1E3420;
-    transform: translateX(0.5rem);
-    margin-right: 0;
 }
 
 .pageTitle{
