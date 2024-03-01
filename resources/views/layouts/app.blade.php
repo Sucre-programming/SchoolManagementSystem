@@ -17,7 +17,7 @@
     
 </head>
 <!-- Log on to codeastro.com for more projects -->
-<body class="bg-gray-100 font-sans antialiased customBody">
+<body class="bg-gray-100 font-sans antialiased customBody backdrop">
 
     <div class="pageBodyNavbarWrapper">
 
@@ -31,7 +31,7 @@
 
     </div>
 
-    <div class="pageBodyWrapper backdrop">
+    <div class="pageBodyWrapper">
 
         @yield('content')
 
