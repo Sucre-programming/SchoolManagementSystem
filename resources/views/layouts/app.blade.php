@@ -16,7 +16,7 @@
     <script defer type="text/javascript" src="{{ asset('js/customBehavioursJS.js') }}"></script>
     
 </head>
-<!-- Log on to codeastro.com for more projects -->
+
 <body class="bg-gray-100 font-sans antialiased customBody backdrop">
 
     <div class="pageBodyNavbarWrapper">
