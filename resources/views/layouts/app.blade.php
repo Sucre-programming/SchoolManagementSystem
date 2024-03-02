@@ -12,8 +12,6 @@
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
-
-    <script defer type="text/javascript" src="{{ asset('js/customBehavioursJS.js') }}"></script>
     
 </head>
 
@@ -46,6 +44,12 @@
             })
         })
     </script>
+
+    <script>
+        var currentRoute = "{{ Route::currentRouteName() }}";
+    </script>
+
+    <script defer type="text/javascript" src="{{ asset('js/customBehavioursJS.js') }}"></script>
 
     @stack('scripts')
 

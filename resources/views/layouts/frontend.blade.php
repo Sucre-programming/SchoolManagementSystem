@@ -14,8 +14,6 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
     
-    <script defer type="text/javascript" src="{{ asset('js/customBehavioursJS.js') }}"></script>
-    
 </head>
 
 <body class="bg-gray-100 font-sans antialiased customBody backdrop" >
@@ -31,6 +29,8 @@
         @yield('content')
                 
     </div>
+
+    <script defer type="text/javascript" src="{{ asset('js/customBehavioursJS.js') }}"></script>
     
 </body>
 

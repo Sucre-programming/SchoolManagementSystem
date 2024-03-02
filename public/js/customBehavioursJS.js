@@ -32,4 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// console.log(document)
+//  console.log(document)
+
+const activateTab = (tab) =>{
+
+    var selectedTab = document.querySelector(`a[tab*="${tab}"]`);
+
+    if(selectedTab != null){
+        selectedTab.classList.add("activeTab");
+    }else{
+        console.log("no tab identified")
+    }
+}
+
+ document.addEventListener('DOMContentLoaded', () => {
+    
+    var firstPart = currentRoute.split('.')[0];
+    activateTab(firstPart)
+
+});

@@ -37656,7 +37656,7 @@ video {
     z-index: -1;
     opacity: 0.2;
     background-image: url(images/backgroundPattern.png);
-    filter: blur(2px);
+    filter: blur(1px);
     background-size: 400px 400px;
     background-repeat: repeat;
     /* background-blend-mode: screen; */
@@ -37696,7 +37696,7 @@ video {
     grid-column: 2;
     grid-row: 2;
     border-top-left-radius: var(--rounded);
-    background-color: #1E3420;
+    background-color: #0B2310;
     overflow-y: scroll;
 
     padding: 40px 40px 0 40px;
@@ -37719,7 +37719,6 @@ video {
 .loginForm{
     width: 30%;
     background-color: #00000099;
-    -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 0 30px 2px #000000aa;
 
     padding: 3rem 6%;
@@ -37858,21 +37857,19 @@ video {
     padding: 1rem;
 }
 
-.userDropdown{
+.navbarDropdown{
     position: absolute;
     right: 10px;
-    top: 10px;
-    bottom: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbarBtn{
+    margin: 0 !important;
     background-color: #fff;
     color: var(--accent);
+    padding: 13px 10px;
     border-radius: var(--barelyRounded);
-
-    padding: 0 20px;
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    place-items: center;
 }
 
 /* SIDEBAR BLADE */
@@ -37935,7 +37932,12 @@ video {
     grid-row: 2;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 10px;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    align-content: start;
+    row-gap: 10px;
 
     /* WebKit-based browsers (Chrome, Safari) */
     scrollbar-width: thin; /* For Firefox compatibility */
@@ -37958,20 +37960,30 @@ video {
 }
 
 .sidebarText{
+    height: min-content;
     font-size: 1rem;
     color: #fff;
     white-space: nowrap;
     padding: 8% 20px;
-    margin: 10px 0;
-    /* background-color: #ffffff33; */
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #00000022;
     border-radius: var(--rounded);
 
-    transition: background-color 1s, color 500ms, transform 500ms, margin 500ms;
+    transition: background-color 500ms, color 500ms, transform 500ms, margin-right 500ms;
 }
 
 .sidebarText:hover{
     color: var(--accent);
-    background-color: #1E3420;
+}
+
+.activeTab{
+    color: var(--accent) !important;
+    background-color: #0B2310 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    transform: translateX(10%);
+    margin-right: 0;
 }
 
 .pageTitle{
