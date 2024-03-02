@@ -37961,12 +37961,12 @@ video {
     font-size: 1rem;
     color: #fff;
     white-space: nowrap;
-    padding: 5% 20px;
+    padding: 8% 20px;
     margin: 10px 0;
     /* background-color: #ffffff33; */
     border-radius: var(--rounded);
 
-    transition: background-color 500ms, color 500ms, transform 500ms, margin 500ms;
+    transition: background-color 1s, color 500ms, transform 500ms, margin 500ms;
 }
 
 .sidebarText:hover{
