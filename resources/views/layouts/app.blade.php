@@ -10,6 +10,9 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- font awesome intergration -->
+    <link href="{{ asset('css/webFonts/all.css') }}" rel="stylesheet">
+
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
     

@@ -19,7 +19,8 @@
         @csrf
         <div class="mb-4 inputWrapper">
 
-            <label class="block text-gray-700 text-sm font-bold mb-2 inputLabel" for="emailaddress">
+            <label class="block text-gray-700 font-bold mb-2 inputLabel" for="emailaddress">
+                <i class="fas fa-user"></i>
                 Email
             </label>
 
@@ -34,7 +35,8 @@
 
         <div class="mb-4 inputWrapper">
 
-            <label class="block text-gray-700 text-sm font-bold mb-2 inputLabel" for="password">
+            <label class="block text-gray-700 font-bold mb-2 inputLabel" for="password">
+                <i class="fas fa-key"></i>
                 Password
             </label>
 
@@ -59,6 +61,7 @@
 
         <div class="flex items-center justify-center">
             <button class="loginBtn" type="submit">
+                <i class="fas fa-sign-in"></i>
                 Log In
             </button>
         </div>
