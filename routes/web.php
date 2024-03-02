@@ -46,7 +46,6 @@ Route::group(['middleware' => ['auth','role:Admin']], function ()
     Route::resource('teacher', 'TeacherController');
     Route::resource('parents', 'ParentsController');
     Route::resource('student', 'StudentController');
-    Route::get('attendance', 'AttendanceController@index')->name('attendance.index');
 
 });
 
@@ -54,6 +53,7 @@ Route::group(['middleware' => ['auth','role:Teacher']], function ()
 {
     Route::post('attendance', 'AttendanceController@store')->name('teacher.attendance.store');
     Route::get('attendance-create/{classid}', 'AttendanceController@createByTeacher')->name('teacher.attendance.create');
+    Route::get('attendance', 'AttendanceController@index')->name('attendance.index');
 });
 
 Route::group(['middleware' => ['auth','role:Parent']], function () 
